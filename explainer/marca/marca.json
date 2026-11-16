@@ -1,0 +1,26 @@
+{
+  "nombre": "Proyecto Dos Realty (explainer)",
+  "colores": {
+    "fondo": "#27529E",
+    "resplandor": "#3563B3",
+    "texto": "#FFFFFF",
+    "texto_tenue": "#8FA6CF",
+    "acento": "#DDC5A2",
+    "secundario": "#3DAAD2",
+    "alerta": "#E89064"
+  },
+  "fuentes": {
+    "principal": "explainer/fuentes/Poppins-Bold.ttf",
+    "acento": "explainer/fuentes/Montserrat-MediumItalic.ttf"
+  },
+  "logo": "explainer/marca/logo.png",
+  "cta": {
+    "texto": "Contactanos",
+    "color": "#3DAAD2",
+    "estilo": "rellena"
+  },
+  "voz": {
+    "voice_id": "",
+    "velocidad": 1.0
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "nombre": "Proyecto Dos Realty",
+  "colores": {
+    "fondo": "#27529E",
+    "texto": "#FFFFFF",
+    "acento": "#3DAAD2",
+    "borde": "#080808",
+    "celeste": "#3DAAD2",
+    "negro": "#080808",
+    "gris": "#606060",
+    "naranja": "#E89064",
+    "violeta": "#7664CA"
+  },
+  "fuentes": {
+    "principal": "fuentes/Poppins-Bold.ttf",
+    "secundaria": "fuentes/Poppins-Regular.ttf",
+    "etiqueta": "fuentes/Poppins-Medium.ttf",
+    "acento": "fuentes/Montserrat-MediumItalic.ttf"
+  },
+  "logo": "marca/logo-horizontal-blanco.png",
+  "cta": {
+    "texto": "Ver propiedades",
+    "color": "#FFFFFF",
+    "estilo": "rellena"
+  },
+  "voz": {
+    "voice_id": "",
+    "velocidad": 1.0
+  },
+  "placa": {
+    "mayusculas": false,
+    "resaltado": "color",
+    "logo": "arriba-izquierda",
+    "ancho_logo": 0.27,
+    "cta": "izquierda",
+    "cta_mayusculas": true,
+    "tam_cta": 0.03,
+    "sombra": true,
+    "oscurecer": 235,
+    "velo": "#050B18",
+    "tinte": {
+      "color": "#27529E",
+      "alfa": 70
+    },
+    "posicion": "abajo",
+    "tam_max": 0.07,
+    "l2_ratio": 0.44,
+    "l2_interlineado": 1.45,
+    "etiqueta_colores": [
+      "#5CD6E6",
+      "#1450B8"
+    ],
+    "etiqueta_mayusculas": true,
+    "interlineado": 1.18,
+    "margen": 0.055
+  },
+  "subtitulos": {
+    "borde": 3,
+    "sombra": 4,
+    "entrada": "palabras"
+  }
+}

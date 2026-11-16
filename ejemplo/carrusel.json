@@ -1,0 +1,18 @@
+{
+  "nombre": "errores-que-cuestan-clientes",
+  "placas": [
+    {"tipo": "portada", "titulo": "5 errores que *te hacen perder* clientes", "bajada": "El tercero lo comete casi todo el mundo",
+     "imagen": "../mis-imagenes/equipo-reunion-oficina.jpg"},
+    {"tipo": "texto", "numero": "01", "titulo": "Responder *tarde*",
+     "cuerpo": "Quien pide presupuesto suele consultar a varios a la vez. Muchas veces gana el primero que contesta bien."},
+    {"tipo": "texto", "numero": "02", "titulo": "Hablar de precio *antes* que de la necesidad",
+     "cuerpo": "Si no entendés qué le duele, cualquier número le va a parecer caro."},
+    {"tipo": "lista", "titulo": "03 · Antes de cotizar, *preguntá*:",
+     "items": ["¿Qué problema querés resolver?", "¿Para cuándo lo necesitás?", "¿Quién más decide?"]},
+    {"tipo": "dato", "valor": "+20", "etiqueta": "reuniones por mes", "nota": "Ejemplo: reemplazalo por tu dato real", "fondo": "acento"},
+    {"tipo": "imagen", "imagen": "../mis-imagenes/cliente-firmando.jpg", "titulo": "04 · No hacer *seguimiento*",
+     "cuerpo": "La mayoría de las ventas se cierran después del segundo contacto."},
+    {"tipo": "cita", "texto": "Desde que ordenamos el seguimiento, cerramos el doble de propuestas.", "autor": "Ejemplo de testimonio"},
+    {"tipo": "cierre", "titulo": "¿Te sirvió?", "bajada": "Guardalo y compartilo con tu equipo"}
+  ]
+}
