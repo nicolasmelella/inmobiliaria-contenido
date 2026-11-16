@@ -39,7 +39,25 @@ iProfesional (Real Estate), El Cronista, La Nación (Propiedades), Clarín (Arq 
 ## Portales (avisos)
 Zonaprop, Argenprop, MercadoLibre Inmuebles, Properati.
 
-## Instagram (cuentas para seguir / referencia) — completar
+## Fuentes elegidas por el usuario (2026-11-16) — PRIORIDAD
+Instagram (se leen con capturas o links que pasa el usuario → `/material`; la lectura directa pide login):
+| Cuenta | Link | Tema |
+|---|---|---|
+| @informe_construccion | https://www.instagram.com/informe_construccion/ | construcción, costos, obras |
+| @ladrillo.info | https://www.instagram.com/ladrillo.info/ | mercado inmobiliario y construcción |
+| @minutoconstructivo | https://www.instagram.com/minutoconstructivo/ | construcción en formato corto |
+| @lnpropiedades | https://www.instagram.com/lnpropiedades/ | La Nación Propiedades: mercado, barrios, precios |
+| @deinmobiliarios | https://www.instagram.com/deinmobiliarios/ | contenido para el rubro inmobiliario |
+
+Web:
+| Sitio | Link | Uso |
+|---|---|---|
+| Reporte Inmobiliario | https://www.reporteinmobiliario.com/ | precios, costos de construcción, lotes, rentabilidad |
+| Reporte Inmobiliario – nota compartida | https://www.reporteinmobiliario.com/article2512 | procesar con `/material` |
+| Blog de Zonaprop | https://www.zonaprop.com.ar/blog/ | Zonaprop Index mensual y notas de mercado |
+| Ámbito – Mercado inmobiliario | https://www.ambito.com/mercado-inmobiliario-a5130115 | noticias del sector |
+
+## Instagram (otras cuentas de referencia)
 | Cuenta | Por qué | Notas |
 |---|---|---|
 | Marcela Genta (agente en Buenos Aires) | análisis de mercado y tips para compradores y vendedores en IG y TikTok; mucha audiencia | usuario exacto a verificar |
