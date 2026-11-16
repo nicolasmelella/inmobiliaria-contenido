@@ -63,6 +63,9 @@ python3 motor/placa.py --texto "*+20 leads* por mes | sin depender de referidos"
   --salida "$T/salida/placas/p2"
 python3 motor/placa.py --texto "Reuniones *todas las semanas*" --fondo "#F2EFE6" --color-acento "#C2410C" \
   --sin-logo --cta "Agendá" --estilo-cta contorno --salida "$T/salida/placas/p3"
+# p4: etiqueta con degradado arriba del título
+python3 motor/placa.py --texto "Descubrí el estilo de vida | que buscás" --etiqueta "Propiedades seleccionadas" \
+  --imagen "$T/img/a.jpg" --salida "$T/salida/placas/p4"
 python3 - "$T/salida/placas" <<'PY'
 import sys
 from pathlib import Path
@@ -73,7 +76,7 @@ for f in Path(sys.argv[1]).glob("*.png"):
     fmt = f.stem.split("_")[-1]
     assert Image.open(f).size == esperado[fmt], f
     n += 1
-assert n == 7, n
+assert n == 9, n
 print(f"placas OK ({n})")
 PY
 # Explainer (marca separada, sin voz: ritmo estimado) en 9:16 y 4:5

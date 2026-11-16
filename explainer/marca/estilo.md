@@ -1,15 +1,16 @@
-# Estilo — marca del explainer (A CONFIGURAR)
+# Estilo — marca del explainer (Proyecto Dos Realty)
 
 > Branding nuevo de la inmobiliaria: nada de Psico Studios. Si el explainer usa la misma marca que las placas,
 > copiar acá lo de `marca/` (colores, logo, fuentes) para que siga siendo independiente. Completar con
 > `/configurar-marca-explainer`.
 
 ## Qué hacemos y para quién
-- Inmobiliaria (a completar). Públicos: compradores, inquilinos, propietarios, inversores (confirmar).
+- Proyecto Dos Realty, inmobiliaria en Buenos Aires (Perú 89, 7.º piso, CABA). Ver `marca/estilo.md`. Públicos: compradores, inquilinos, propietarios, inversores (confirmar).
 
-## Colores (provisorios)
-- Fondo `#1F2A33` con resplandor `#2E3D49`; texto `#FFFFFF`; palabras no dichas `#7A8894`.
-- Acento `#D9A441`; secundario `#8FB3C7`; alerta `#C0503A` (usar poco).
+## Colores (del manual de Proyecto Dos)
+- Fondo azul `#27529E` con resplandor `#3563B3`; texto `#FFFFFF`; palabras no dichas `#8FA6CF`.
+- Acento arena `#DDC5A2`; secundario celeste `#3DAAD2`; alerta naranja `#E89064` (usar poco).
+- Tipografía Poppins Bold (como el feed) + Montserrat Medium Italic de acento. Logo: la «P» blanca.
 
 ## Tono de los guiones
 - Voseo rioplatense (a confirmar). Claro y concreto: pasos, requisitos, costos, plazos.

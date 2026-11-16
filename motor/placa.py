@@ -14,6 +14,7 @@ Uso:
   Texto:
     "L1 | L2"   L1 en la fuente principal (MAYÚSCULAS salvo que marca.json -> placa.mayusculas sea false), L2 en itálica.
     --diferenciales "A · B · C"  renglón de ítems cortos entre el texto y el botón.
+    --etiqueta "PROPIEDADES SELECCIONADAS"  píldora chica arriba del título (degradado de placa.etiqueta_colores).
     *palabra*   en L1 se resalta: --resaltado color (color de acento), italica (serif itálica) o caja (itálica sobre recuadro).
   Marca:
     --fuente fuentes/Principal-Bold.ttf  --fuente-acento fuentes/Acento-Italic.ttf
@@ -167,13 +168,35 @@ def pildora(draw, lienzo, texto, fuente, x, y_centro, color, estilo, centrada=Fa
     return caja
 
 
+def etiqueta_degradada(lienzo, texto, fuente, x, y, colores):
+    """Píldora con degradado horizontal (colores[0] -> colores[-1]) y texto blanco, arriba a la izquierda en (x, y)."""
+    d = ImageDraw.Draw(lienzo)
+    tw = d.textlength(texto, font=fuente)
+    alto = round(fuente.size * 1.75)
+    ancho = round(tw + fuente.size * 1.4)
+    c0, c1 = hex_rgb(colores[0]), hex_rgb(colores[-1])
+    grad = Image.new("RGBA", (ancho, alto))
+    gd = ImageDraw.Draw(grad)
+    for i in range(ancho):
+        k = i / max(1, ancho - 1)
+        gd.line([(i, 0), (i, alto)], fill=tuple(round(c0[j] + (c1[j] - c0[j]) * k) for j in range(3)) + (255,))
+    mascara = Image.new("L", (ancho, alto), 0)
+    ImageDraw.Draw(mascara).rounded_rectangle([0, 0, ancho - 1, alto - 1], radius=alto // 2, fill=255)
+    grad.putalpha(mascara)
+    lienzo.alpha_composite(grad, (round(x), round(y)))
+    d.text((x + fuente.size * 0.7, y + alto / 2), texto, font=fuente, fill=(255, 255, 255), anchor="lm")
+    return alto
+
+
 def componer(a, fondo_img, w, h):
-    margen = round(w * 0.08)
-    ancho_txt = round(w * 0.84)
+    margen = round(w * a.margen)
+    ancho_txt = w - 2 * margen
 
     # Fondo
     if fondo_img is not None:
         lienzo = cubrir(fondo_img, w, h, a.foco).convert("RGBA")
+        if a.tinte:   # tinte parejo de color sobre la foto (marca.json -> placa.tinte: {"color", "alfa"})
+            lienzo.alpha_composite(Image.new("RGBA", (w, h), hex_rgb(a.tinte["color"]) + (int(a.tinte.get("alfa", 60)),)))
         lienzo.alpha_composite(degradado(w, h, desde=0.30 if h > w else 0.25, alfa_max=a.oscurecer,
                                          color=hex_rgb(a.velo) if a.velo else (0, 0, 0)))
         color_txt = a.color or (a.texto_marca if a.texto_marca and luminancia(hex_rgb(a.texto_marca)) > 150
@@ -216,38 +239,44 @@ def componer(a, fondo_img, w, h):
             r_dif.append(actual)
         inter_dif = round(f_dif.size * 1.45)
         base_y -= len(r_dif) * inter_dif + round(w * 0.035)
+    f_et, alto_et = None, 0
+    if a.etiqueta:
+        f_et = cargar_fuente(a.fuente_etiqueta or a.fuente, round(w * 0.026), negrita=True)
+        alto_et = round(f_et.size * 1.75) + round(w * 0.025)
     zona_alta = h * (0.45 if h > w else 0.55)
     if a.posicion == "centro":
         zona_alta = h * 0.24   # texto en el medio: puede ocupar más alto
 
     # Tamaño: el más grande que entra (renglones ≤ 4, ancho ≤ 84 %)
-    tam_max = round(w * 0.13)
+    tam_max = round(w * a.tam_max)
     tam_min = round(w * 0.05)
     elegido = None
     for tam in range(tam_max, tam_min - 1, -2):
         f1 = cargar_fuente(a.fuente, tam, negrita=True)
-        f2 = cargar_fuente(a.fuente_acento, round(tam * 0.62), italica=True)
+        f2 = cargar_fuente(a.fuente_l2 or a.fuente_acento, round(tam * a.l2_ratio), italica=not a.fuente_l2)
         fi = cargar_fuente(a.fuente_acento, round(tam * 1.08), italica=True) if italica else f1
         fuente_de = (lambda r, f1=f1, fi=fi: fi if r else f1)
         r1, ancho1 = partir_mixto(toks, fuente_de, ancho_txt, draw)
         r2 = partir([(t, False) for t in l2.split()], f2, ancho_txt, draw) if l2 else []
-        inter1, inter2 = round(tam * (1.12 if italica else 1.02)), round(f2.size * 1.2)
+        inter1 = round(tam * (a.interlineado or (1.12 if italica else 1.02)))
+        inter2 = round(f2.size * a.l2_interlineado)
         alto_bloque = len(r1) * inter1 + (round(tam * 0.25) + len(r2) * inter2 if r2 else 0)
         # Una palabra sola más ancha que la caja no se parte: hay que achicar
         ancho_ok = (all(ancho1(r) <= ancho_txt for r in r1)
                     and all(draw.textlength(" ".join(t for t, _ in r), font=f2) <= ancho_txt for r in r2))
-        if ancho_ok and len(r1) <= 4 and len(r2) <= 3 and alto_bloque <= base_y - zona_alta:
+        if ancho_ok and len(r1) <= 4 and len(r2) <= 3 and alto_bloque + alto_et <= base_y - zona_alta:
             elegido = (f1, f2, fi, r1, r2, inter1, inter2, alto_bloque)
             break
     aviso = None
     if not elegido:
         aviso = "el texto no entra ni al tamaño mínimo: acortá la frase"
         f1 = cargar_fuente(a.fuente, tam_min, negrita=True)
-        f2 = cargar_fuente(a.fuente_acento, round(tam_min * 0.62), italica=True)
+        f2 = cargar_fuente(a.fuente_l2 or a.fuente_acento, round(tam_min * a.l2_ratio), italica=not a.fuente_l2)
         fi = cargar_fuente(a.fuente_acento, round(tam_min * 1.08), italica=True) if italica else f1
         r1, _ = partir_mixto(toks, lambda r: fi if r else f1, ancho_txt, draw)
         r2 = partir([(t, False) for t in l2.split()], f2, ancho_txt, draw) if l2 else []
-        inter1, inter2 = round(tam_min * (1.12 if italica else 1.02)), round(f2.size * 1.2)
+        inter1 = round(tam_min * (a.interlineado or (1.12 if italica else 1.02)))
+        inter2 = round(f2.size * a.l2_interlineado)
         elegido = (f1, f2, fi, r1, r2, inter1, inter2, len(r1) * inter1 + len(r2) * inter2)
     f1, f2, fi, r1, r2, inter1, inter2, alto_bloque = elegido
 
@@ -269,6 +298,8 @@ def componer(a, fondo_img, w, h):
         desde = max(0.05, (y - w * 0.15) / h)
         lienzo.alpha_composite(degradado(w, h, desde=desde, alfa_max=round(a.oscurecer * 0.6),
                                          color=hex_rgb(a.velo) if a.velo else (0, 0, 0)))
+    if a.etiqueta:
+        etiqueta_degradada(lienzo, a.etiqueta, f_et, margen, y - alto_et, a.etiqueta_colores)
     col = hex_rgb(color_txt)
     if italica:   # resaltado en itálica: mismo color que el texto salvo que la marca pida otro
         acento = hex_rgb(a.color_resaltado) if a.color_resaltado else col
@@ -378,6 +409,7 @@ def main():
     ap.add_argument("--posicion", choices=["abajo", "centro"], default=None,
                     help="dónde va el bloque de texto (default: marca.json -> placa.posicion o abajo)")
     ap.add_argument("--diferenciales", help='renglón de ítems cortos sobre el botón: "Sin contrato · Sin mínimo · Equipado"')
+    ap.add_argument("--etiqueta", help='píldora chica arriba del título: "PROPIEDADES SELECCIONADAS"')
     ap.add_argument("--resaltado", choices=["color", "italica", "caja"],
                     help="cómo se marcan las *palabras*: color, itálica, o itálica sobre recuadro (default: marca.json)")
     ap.add_argument("--formatos", default="1x1,4x5")
@@ -410,6 +442,20 @@ def main():
     a.color_cta = a.color_cta or g(m, "cta", "color") or g(m, "colores", "acento")
     a.estilo_cta = a.estilo_cta or g(m, "cta", "estilo", defecto="contorno")
     a.foco = tuple(float(v) for v in a.foco.split(","))
+    # Opcionales de marca.json (si no están, la placa queda como siempre)
+    a.tam_max = g(m, "placa", "tam_max", defecto=0.13)                    # tamaño máx. del título (fracción del ancho)
+    a.l2_ratio = g(m, "placa", "l2_ratio", defecto=0.62)                  # tamaño de L2 respecto de L1
+    a.l2_interlineado = g(m, "placa", "l2_interlineado", defecto=1.2)
+    a.interlineado = g(m, "placa", "interlineado")                        # interlineado del título (× tamaño)
+    a.margen = g(m, "placa", "margen", defecto=0.08)                      # margen lateral (fracción del ancho)
+    a.fuente_l2 = archivo_marca(m, g(m, "fuentes", "secundaria")) if g(m, "fuentes", "secundaria") else None
+    a.fuente_etiqueta = archivo_marca(m, g(m, "fuentes", "etiqueta")) if g(m, "fuentes", "etiqueta") else None
+    a.etiqueta_colores = g(m, "placa", "etiqueta_colores", defecto=[a.color_acento or "#FFFFFF"] * 2)
+    a.tinte = g(m, "placa", "tinte")
+    if a.etiqueta and g(m, "placa", "etiqueta_mayusculas", defecto=True):
+        a.etiqueta = a.etiqueta.upper()
+    if a.cta and g(m, "placa", "cta_mayusculas", defecto=False):
+        a.cta = a.cta.upper()
 
     fondo = None
     if a.imagen:

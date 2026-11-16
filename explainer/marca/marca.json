@@ -1,22 +1,22 @@
 {
-  "nombre": "Mi marca (explainer)",
+  "nombre": "Proyecto Dos Realty (explainer)",
   "colores": {
-    "fondo": "#1F2A33",
-    "resplandor": "#2E3D49",
+    "fondo": "#27529E",
+    "resplandor": "#3563B3",
     "texto": "#FFFFFF",
-    "texto_tenue": "#7A8894",
-    "acento": "#D9A441",
-    "secundario": "#8FB3C7",
-    "alerta": "#C0503A"
+    "texto_tenue": "#8FA6CF",
+    "acento": "#DDC5A2",
+    "secundario": "#3DAAD2",
+    "alerta": "#E89064"
   },
   "fuentes": {
-    "principal": "explainer/fuentes/Poppins-SemiBold.ttf",
-    "acento": "explainer/fuentes/PlayfairDisplay-Italic.ttf"
+    "principal": "explainer/fuentes/Poppins-Bold.ttf",
+    "acento": "explainer/fuentes/Montserrat-MediumItalic.ttf"
   },
   "logo": "explainer/marca/logo.png",
   "cta": {
-    "texto": "Consultanos por WhatsApp",
-    "color": "#D9A441",
+    "texto": "Contactanos",
+    "color": "#3DAAD2",
     "estilo": "rellena"
   },
   "voz": {
