@@ -1,0 +1,30 @@
+{
+  "salida": "salida/explainer.mp4",
+  "voz": "voz.mp3",
+  "palabras": "palabras.json",
+  "escenas": [
+    {"texto": "¿Qué te hace vender más: el precio o la confianza?", "clave": ["confianza?"],
+     "visual": {"tipo": "iconos", "separador": "o", "items": [
+       {"icono": "moneda", "etiqueta": "Precio", "en": "precio"},
+       {"icono": "check", "etiqueta": "Confianza", "acento": true, "en": "confianza"}]}},
+    {"texto": "Todos compiten por el mismo cliente.", "clave": ["cliente."],
+     "visual": {"tipo": "grupo", "centro": {"icono": "persona", "etiqueta": "Cliente"}, "alrededor": "casa", "cantidad": 6, "en": "compiten"}},
+    {"texto": "Y si no le respondés rápido, se va.", "clave": ["va."],
+     "visual": {"tipo": "iconos", "items": [{"icono": "mensaje"}, {"icono": "reloj", "etiqueta": "Sin respuesta", "en": "respondés"}]},
+     "sello": {"texto": "Se va", "en": "va"}},
+    {"texto": "Los clientes llegan por anuncios, redes y recomendaciones.", "clave": ["llegan"],
+     "visual": {"tipo": "etiquetas", "items": ["Anuncios", "Redes", "Recomendaciones"], "icono": "persona", "en": ["anuncios", "redes", "recomendaciones"]}},
+    {"texto": "Antes de cotizar, hacé tres preguntas.", "clave": ["tres"],
+     "visual": {"tipo": "lista", "items": ["¿Qué necesita?", "¿Para cuándo?", "¿Quién decide?"], "en": ["antes", "hacé", "preguntas"]}},
+    {"texto": "Si arrancás por el precio, el interés cae.", "clave": ["cae."],
+     "visual": {"tipo": "grafico", "puntos": [90, 62, 48, 41, 38], "etiquetas": ["Día 1", "2", "3", "4", "5"], "en": "arrancás"},
+     "sello": {"texto": "Perdiste", "en": "cae"}},
+    {"texto": "Con este método, veinte reuniones por mes.", "clave": ["veinte"],
+     "visual": {"tipo": "numero", "valor": "+20", "etiqueta": "reuniones por mes", "en": "veinte"}},
+    {"texto": "Así trabajamos en el día a día.",
+     "visual": {"tipo": "imagen", "src": "foto.jpg", "alto": 0.75}},
+    {"texto": "¿Quién gana? El que pregunta mejor.", "clave": ["pregunta"],
+     "visual": {"tipo": "titulo", "texto": "¿Quién gana?", "icono": "estrella"}}
+  ],
+  "cierre": true
+}

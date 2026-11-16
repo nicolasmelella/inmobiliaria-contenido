@@ -1,0 +1,1 @@
+# Las rutas del plan son relativas a la carpeta del plan (trabajo/). "cierre": true usa logo, fondo y CTA de marca/marca.json.

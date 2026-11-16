@@ -1,0 +1,40 @@
+{
+  "nombre": "Mi marca",
+  "colores": {
+    "fondo": "#1F2A33",
+    "texto": "#FFFFFF",
+    "acento": "#D9A441",
+    "borde": "#1F2A33"
+  },
+  "fuentes": {
+    "principal": "fuentes/Poppins-SemiBold.ttf",
+    "acento": "fuentes/PlayfairDisplay-Italic.ttf"
+  },
+  "logo": "marca/logo.png",
+  "cta": {
+    "texto": "Consultanos por WhatsApp",
+    "color": "#D9A441",
+    "estilo": "rellena"
+  },
+  "voz": {
+    "voice_id": "",
+    "velocidad": 1.0
+  },
+  "placa": {
+    "mayusculas": false,
+    "resaltado": "italica",
+    "logo": "arriba-derecha",
+    "ancho_logo": 0.17,
+    "cta": "centro",
+    "sombra": true,
+    "oscurecer": 200,
+    "velo": "#1F2A33",
+    "tam_cta": 0.044,
+    "posicion": "centro"
+  },
+  "subtitulos": {
+    "borde": 3,
+    "sombra": 4,
+    "entrada": "palabras"
+  }
+}

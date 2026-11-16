@@ -1,0 +1,15 @@
+{
+  "salida": "salida/video.mp4",
+  "formatos": ["9x16", "4x5"],
+  "fps": 30,
+  "voz": "voz.mp3",
+  "musica_db": -22,
+  "subtitulos": "subs.ass",
+  "escenas": [
+    {"src": "../mis-imagenes/equipo-reunion-oficina.jpg", "dur": 3.0, "mov": "acercar", "foco": [0.5, 0.4]},
+    {"src": "../mis-imagenes/cliente-firmando.mp4", "dur": 2.5, "desde": 1.0},
+    {"src": "../mis-imagenes/producto-caja-mesa.jpg", "dur": 3.0, "mov": "izquierda"},
+    {"color": "#111111", "dur": 1.0}
+  ],
+  "cierre": true
+}

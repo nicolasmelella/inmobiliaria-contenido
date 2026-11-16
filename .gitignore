@@ -1,0 +1,11 @@
+.env
+.venv/
+__pycache__/
+trabajo/
+trabajo-explainer/
+salida/
+tests/_humo/
+# Si no querés subir tus fotos al repo, sacale el # a la línea de abajo:
+# mis-imagenes/*
+*.mp4
+*.mp3

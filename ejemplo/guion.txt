@@ -1,0 +1,4 @@
+# Una línea = un bloque de subtítulo. "L1 | L2" = dos renglones (L1 mayúsculas, L2 itálica).
+¿Tus leads llegan tarde? | y se enfrían
+Nosotros los traemos | todos los días
+Agendá tu reunión
