@@ -10,6 +10,15 @@ Estado de acceso desde la sesión en la nube (probado el 2026-11-16):
   extracción automática. Para avisos concretos: el usuario pasa links o capturas. Para tendencias: sus informes
   públicos de precios (salen en medios y en sus blogs).
 
+## ⭐ Precio de CIERRE (lo que de verdad se paga) — la mejor fuente es gratis
+- **Índice M² Real** (RE/MAX Argentina + UCEMA + Reporte Inmobiliario): mensual y público. Precio efectivo de cierre de
+  deptos de 1 a 3 ambientes en CABA y brecha con el precio publicado. Clave para vendedores («cuánto se negocia»)
+  y compradores. Buscar «Índice M2 Real» + mes.
+- **Colegio de Escribanos CABA**: escrituras realmente firmadas (cantidad, monto, hipotecas).
+- Blog de deinmobiliarios.com: resúmenes de precios de cierre por semestre (ej. 1.er semestre 2026).
+- Ojo: muchas notas de «precios de cierre» son de inmobiliarias o tasadoras con interés comercial; usar el índice
+  original cuando se pueda.
+
 ## Datos de mercado (precios, m², tendencia)
 | Fuente | Qué trae | Frecuencia | Acceso |
 |---|---|---|---|
