@@ -11,30 +11,38 @@
 - Cómo se presentan: «Somos un equipo de jóvenes profesionales con amplia trayectoria en el mercado inmobiliario».
 - Ejemplos del manual: emprendimientos (Edificio Co-living 9 de Julio, para estudiantes y jóvenes graduados),
   inversión («Seguridad y confianza en tu inversión»), proyectos en Tulum, México (Aldea Zama). Confirmar cuáles son reales.
-- Zona/barrios y años de trayectoria: (a completar).
-- Operaciones: (a completar — venta, alquiler, alquiler temporario, emprendimientos, tasaciones, administración).
-- Públicos posibles (confirmar cuáles):
-  - **Compradores** (primera vivienda, mudanza, familia que crece).
-  - **Inquilinos** que buscan alquilar.
-  - **Propietarios que quieren vender o alquilar** (captación: tasaciones, «vendé tu propiedad»).
-  - **Inversores** (renta, pozo, temporario).
-- Diferencial: (a completar).
+- Años de trayectoria y diferencial: (a completar).
 
-## Estructura de los mensajes
-- Por defecto **problema → solución**, con el peso en la solución (heredado del motor; confirmar con el usuario).
-- Dolores típicos (a validar):
-  - Comprador/inquilino: no encontrar lo que busca, requisitos y garantías, miedo a papeles/escritura, crédito.
-  - Propietario: no saber cuánto vale su propiedad, que no se venda/alquile, inquilinos que no pagan, trámites.
-  - Inversor: dónde conviene invertir, rentabilidad, riesgo.
-- Tipos de pieza:
-  - **Propiedad** (ficha): tipo · barrio · ambientes · m² · precio u «consultar» · 2–3 diferenciales · CTA.
-  - **Captación**: «¿Querés vender? Tasación sin cargo», etc.
-  - **Educativa**: pasos para comprar, gastos de escritura, requisitos para alquilar, errores comunes.
-  - **Zona/barrio**: por qué vivir o invertir en X.
-  - **Confianza**: equipo, operaciones cerradas (solo reales y con permiso).
+## Objetivo y estrategia (definido por el usuario, 2026-11-16)
+- **Objetivo:** CAPTAR. Cada pieza tiene que acercar a un **propietario que quiere vender** o a un **comprador /
+  inversor con capital**. El contenido es **educativo**: enseña algo útil y cierra con un CTA de captación.
+- **Públicos (solo estos tres):**
+  1. **Vendedores:** tienen una propiedad y quieren venderla. Dolores: no saber cuánto vale, publicar caro y que
+     no se venda, ofertas bajas, papeles (sucesión, planos, escritura), impuestos y gastos de la venta, con qué
+     comprar después.
+  2. **Compradores:** tienen el capital y buscan dónde vivir. Dolores: precio justo vs. inflado, cuánto negociar,
+     gastos de escritura, crédito hipotecario, qué revisar antes de reservar, usado vs. a estrenar.
+  3. **Inversores:** buscan renta o valorización. Dolores: qué barrio rinde más, renta en USD, pozo vs. usado,
+     comprar lote para construir, riesgos, temporario vs. tradicional.
+- **Zona:** Capital Federal. Foco: **Belgrano, Palermo, Recoleta, Colegiales, Núñez, Saavedra, Chacarita y
+  Coghlan**. Otros barrios de CABA se aceptan.
+- **Qué buscamos siempre:** **casas, departamentos y lotes para construir.**
+- **CTA según público:**
+  - Vendedor → «PEDÍ TU TASACIÓN» / «QUIERO VENDER» / «Escribinos: tasamos sin cargo».
+  - Comprador → «QUIERO RECIBIR PROPIEDADES» / «VER PROPIEDADES».
+  - Inversor → «QUIERO OPORTUNIDADES» / «HABLEMOS DE TU INVERSIÓN».
+- **Pilares de contenido:**
+  1. **Datos del mercado por barrio** (m², tendencia, tiempo de venta, margen de negociación) → los tres públicos.
+  2. **Guías paso a paso** (cómo vender, cómo comprar, gastos, papeles) → vendedor / comprador.
+  3. **Números de inversión** (renta, lote: qué se puede construir, pozo vs. usado) → inversor.
+  4. **Errores comunes** (publicar caro, no tasar, reservar sin revisar) → vendedor / comprador.
+  5. **Barrio por barrio** (qué buscar, perfiles, precios) → los tres; refuerza que somos de la zona.
+- **Datos:** todo número que salga en una pieza tiene que tener fuente y fecha en `investigacion/` (nunca
+  inventar ni redondear a ojo). Si las fuentes no coinciden, decirlo en el chat y usar rangos o la más confiable.
+  En la pieza va la fuente chica si el dato es fuerte («Fuente: Zonaprop, oct. 2026»).
 
 ## Datos del negocio (completar; nunca inventar)
-- Zona de las propiedades: Buenos Aires (barrios a completar).
+- Zona: CABA (ver barrios foco en «Objetivo y estrategia»).
 - Contacto: teléfono/WhatsApp (+54 11) 4041 5356 (de la tarjeta comercial; confirmar si es el WhatsApp para piezas).
 - CTA por defecto: «VER PROPIEDADES». Otros: «QUIERO RECIBIR PROPIEDADES», «CONTACTANOS», «PEDÍ TU TASACIÓN».
 - Instagram: (a completar)

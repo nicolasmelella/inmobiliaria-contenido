@@ -13,7 +13,11 @@ agregás al motor y corrés `bash tests/prueba_humo.sh`.
    `marca.json` solos: no los pases a mano salvo que el usuario pida otra cosa para esta pieza.
 2. Si `marca.json` todavía tiene los valores de ejemplo (nombre "Mi marca", logo o fuentes que no existen), frená y
    proponé correr `/configurar-marca`.
-3. Listá `mis-imagenes/` (nombres de archivo y subcarpetas). Para elegir, mirá las candidatas con Read
+3. **Datos y objetivo:** cada pieza le habla a UN público (vendedor, comprador o inversor) y cierra con su CTA
+   (`estilo.md` → «Objetivo y estrategia»). Todo número tiene que estar en `investigacion/datos/mercado.csv` con
+   fuente y fecha; si no está, pedíselo al agente `investigador` antes de seguir. Marcá la idea en
+   `investigacion/ideas.md` como `producida` al entregar.
+4. Listá `mis-imagenes/` (nombres de archivo y subcarpetas). Para elegir, mirá las candidatas con Read
    (si son muchas, armá una hoja: `python3 motor/hoja.py` sirve para videos; para fotos, abrí las que el nombre sugiera).
 
 ## Video

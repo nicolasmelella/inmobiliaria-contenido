@@ -12,10 +12,14 @@ Proyecto para producir videos verticales (9:16 + 4:5) y placas estáticas (1:1 +
   hecho con IA en Canva a partir de fotos reales (`mis-imagenes/ia/`): fotos animadas y escenas ilustrativas con
   personas generadas, NUNCA presentadas como propiedades, clientes ni testimonios reales (ni «mejorar» una propiedad con IA). Cada video de IA usa el límite
   de IA de Canva del usuario: pedir OK antes de cada generación. Ver `marca/estilo.md` → «IA».
+- **Objetivo:** contenido educativo para **captar** vendedores, compradores e inversores en CABA (barrios foco y
+  tipos de propiedad en `marca/estilo.md` → «Objetivo y estrategia»).
 - **Comandos:** `/configurar-marca` · `/video <tema o guion>` · `/placa <frase o tema>` · `/carrusel <tema>`.
+- **Investigación:** `investigacion/` (ver su LEEME). `/investigar <tema>` · `/material` (lo que comparte el
+  usuario) · `/plan-semana`. Agente `investigador`. Ningún dato en una pieza sin fuente en `investigacion/datos/`.
 - **Explainer animado (OTRA marca, separada):** `explainer/` con su marca en `explainer/marca/`. Comandos
   `/configurar-marca-explainer` y `/explainer <tema>`; agente `explainer`. Nunca mezclar las dos marcas.
-- **Agentes:** `productor` (orquesta) y `auditor` (revisa siempre antes de entregar).
+- **Agentes:** `investigador` (datos e ideas), `productor` (orquesta piezas) y `auditor` (revisa siempre antes de entregar).
 - **Motor:** `motor/` (ver README). Si le falta algo se agrega al motor, no se hacen scripts sueltos, y después
   `bash tests/prueba_humo.sh` tiene que seguir dando OK.
 - Trabajo intermedio en `trabajo/` (explainer: `trabajo-explainer/`), entregables en `salida/`. Las claves van en `.env` (nunca en el chat, el código ni el repo).
